@@ -2,16 +2,16 @@
 
 ## Client Quick Start Installation
 
-The DEX client can be installed in one of the following ways. Download the
+Bison Wallet can be installed in one of the following ways. Download the
 application from *just one* of the following locations:
 
-* Download the standalone DEX client for your operating system for the [latest
+* Download standalone Bison Wallet for your operating system for the [latest
   release on GitHub](https://github.com/decred/dcrdex/releases). Extract the
-  "dexc" executable from the archive and run it. Open any web browser to the
-  link shown by the application. You may also put the **dexc** executable's
+  "bw" executable from the archive and run it. Open any web browser to the
+  link shown by the application. You may also put the **bisonw** executable's
   folder on your `PATH`.
 * [Use Decrediton](https://docs.decred.org/wallets/decrediton/decrediton-setup/),
-  the official graphical Decred wallet, which integrates the DEX client, and go
+  the official graphical Decred wallet, which integrates Bison Wallet, and go
   to the DEX tab.
 * (Legacy users) Use the Decred command line application installer,
   [**dcrinstall**](https://docs.decred.org/wallets/cli/cli-installation/). This
@@ -24,21 +24,21 @@ not `master`.
 ### Important Note on External Wallets
 
 If using external wallet software (e.g. **dcrd**+**dcrwallet**, **bitcoind**,
-Electrum, etc.), they must remain running while the DEX client is running. Do
+Electrum, etc.), they must remain running while Bison Wallet is running. Do
 not shut down, lock, unlock, or otherwise modify your wallet settings while the
 client is running. Also, only send funds from within the DEX application, not
 directly from the external wallet's own controls. Finally, do not manually lock
-or unlock any coins while the DEX client is running.
+or unlock any coins while Bison Wallet is running.
 
 ## Client Configuration
 
-These instructions assume you've obtained the DEX client as described in the
-[Client Quick Start Installation](#client-quick-start-installation) section.
+These instructions assume you've obtained Bison Wallet as described in the
+[Wallet Quick Start Installation](#client-quick-start-installation) section.
 
 ### Prerequisites
 
-If you use the standalone DEX client, you will need a web browser to open the
-DEX client user interface as described in the next section.
+If you use the standalone Bison Wallet, you will need a web browser to open
+Bison Wallett user interface as described in the next section.
 
 Most users will use the native wallets that are already built into the DEX
 client. Depending on the asset, you may be able to choose from: (1) a native
@@ -48,13 +48,15 @@ checkmark in the "native" column, no external software is required.
 
 | Coin         | native | full node | Electrum | notes                        |
 |--------------|--------|-----------|----------|------------------------------|
-| Bitcoin      |    ✓   | [v0.21-v24](https://bitcoincore.org/en/download/) | [v4.2.x](https://electrum.org/) |                              |
-| Decred       |    ✓   | [v1.7-1.8](https://github.com/decred/decred-release/releases) |     x    |                              |
+| Bitcoin      |    ✓   | [v27.0](https://bitcoincore.org/en/download/) | [v4.5.5](https://electrum.org/) |                              |
+| Decred       |    ✓   | [v2.0.3](https://github.com/decred/decred-release/releases) |     x    |                              |
 | Ethereum     |    ✓   | geth IPC/http/ws |   N/A   |  see <https://github.com/decred/dcrdex/wiki/Ethereum>   |
-| Litecoin     |    ✓   | [v0.21.2.2](https://litecoin.org/) | [v4.2.x](https://electrum-ltc.org/) | may require a [bootstrap peer](https://gist.github.com/chappjc/d0f26b12258f8531bb78b37f38d080a0) |
-| Bitcoin Cash |    ✓   | [v24+](https://bitcoincashnode.org/) |     x    | use only Bitcoin Cash Node for full node |
-| Dogecoin     |    x   |  [v1.14.5+](https://dogecoin.com/) |     x    |                              |
+| Litecoin     |    ✓   | [v0.21.2.1](https://litecoin.org/) | [v4.2.2](https://electrum-ltc.org/) | |
+| Bitcoin Cash |    ✓   | [v27.0.0](https://bitcoincashnode.org/) |     x    | use only Bitcoin Cash Node for full node |
+| Dogecoin     |    x   |  [v1.14.7.0](https://dogecoin.com/) |     x    |                              |
 | Zcash        |    x   |   [v5.4.2](https://z.cash/download/)  |     x    |                              |
+| Dash         |    x   |  [v20.1.1](https://github.com/dashpay/dash/releases)  |     x    |
+| Firo         |    x   | [v0.14.13.3](https://github.com/firoorg/firo/releases) | [v4.1.5.5](https://github.com/firoorg/electrum-firo/releases) |
 
 NOTE: The Electrum option is less mature and provides less privacy than the
 other wallet types. Some manual configuration of the Electrum wallet's RPC
@@ -62,11 +64,11 @@ server is also necessary ([example](images/electrum-rpc-config.png)).
 
 ### Synchronizing Wallets
 
-**If using the native wallets** that are integrated with the DEX client (see
+**If using the native wallets** that are integrated with Bison Wallet (see
 above), you can skip this section.
 
 If you choose to use an external wallet (full node or Electrum), you must start
-and synchronize them with their networks *before* running the DEX client.
+and synchronize them with their networks *before* running Bison Wallet.
 
 Note that Bitcoin Core and most "clones" support block pruning, which can keep
 your blockchain storage down to a few GB, not the size of the full blockchain,
@@ -76,11 +78,15 @@ several blocks.
 
 ### Initial Setup
 
-1. Start the client. For the standalone client (**dexc**), open a command prompt
-   in the folder containing the dexc application and run it. e.g. `./dexc` on
-   Mac and Linux, or `dexc.exe` on Windows. To avoid the command prompt on
-   Windows, `dexc-tray.exe` may be run instead. If using Decrediton instead of
-   **dexc**, just click the "DEX" tab and skip to step 3.
+1. Start the client. For installed versions, open through your system applications menu.
+   For standalone Bison Wallet (**bisonw**), open a command prompt
+   in the folder containing the bisonw application and run it. e.g. `./bisonw` on
+   Mac and Linux, or `bisonw.exe` on Windows. To avoid the command prompt on
+   Windows, `bisonw-tray.exe` may be run instead. If using Decrediton instead of
+   **bisonw**, just click the "DEX" tab and skip to step 3.
+
+   **Note**: You can start bisonw with another network via a command line flag:
+   `--testnet` or `--simnet`, the default is `mainnet`.
 
 2. In your web browser, navigate to <http://localhost:5758>. Skip this step if
    using Decrediton.
@@ -95,116 +101,36 @@ several blocks.
    NOTE: Checking the "Remember my password" box only applies to the current
    session. It is easiest for most users to have it checked.
 
-4. Choose the DEX host that you would like to use. Either click one of the
-   pre-defined hosts, or enter the address of a known host that you would like
-   to use.
+4. After creating your app password, you'll be taken to the `Quick Configuration` form:
 
-   <img src="images/add-dex-reg.png" width="320">
+   <img src="images/quick-config.png" width="350">
 
-   NOTE: If you just want to view the markets without being able to trade, check
-   the "No account" box. You will have an opportunity to create an identity
-   later, but the remaining steps assume you are preparing to trade.
+   The selected native wallets will be created for you and you'll be connected
+   to the selected DEX server when you submit the form.
 
-5. The DEX host will show all offered markets, and a choice of assets with which
-   you can lock in a bond to enable trading. Select the asset you wish to use.
+   **Note**: If you encounter an error about not being able to connect to the
+   selected DEX server during the quick configuration, you can manually [add the DEX server](https://github.com/decred/dcrdex/wiki/DEX-Trading-Account-Management#adding-a-dex-trading-account). You will see a list of known DEX server(s) you can choose from.
 
-   <img src="images/choose-bond-asset.png" width="400">
+5. Backup your app seed. This seed is used to restore your DEX accounts and any
+   native wallets, so keep it safe.
 
-   NOTE: A dedicate wiki page describing time-locked fidelity bonds will be
-   created, but in short, fidelity bonds are funds redeemable only by you, but
-   in the future. Having a potential trader lock some amount of funds before
-   placing orders is an anti-spam mechanism to combat disruptive behavior like
-   backing out on swaps.
-
-6. Choose the type of wallet to use. In this screenshot, we choose a native BTC
-   wallet and click "Create!". The wallet will begin to synchronize with the
-   asset's network.
-
-   <img src="images/create-btc.png" width="360">
-
-   NOTE: This is your own **self-hosted** wallet. The wallet's address keys are
-   derived from the DEX application's "seed", which you may backup from the
-   Settings page at any time. Further, no central wallet backend service is
-   involved, only the nodes on the coin's decentralized network.
-
-7. The next form will show you synchronization progress, and give you the first
-   deposit address for the wallet and the minimum amount you should deposit to
-   be able to create your first bond in the next step, which is required to
-   place orders. **This is your wallet**, so deposit as much as you like! After
-   sending to your address, the transaction **must confirm** (i.e. be mined in a
-   block) before the form will update your balance. This form will be skipped if
-   the wallet is already funded and synchronized.
-
-   <img src="images/sync-fund-btc.png" width="360">
-
-   **IMPORTANT**: This is your own local wallet, and you can send as much as you
-   like to it since *only* the amount required for the bond will be spent in the
-   next step. The remaining amount, minus a small reserve for future bond
-   transactions, will be in your available balance. For example, you can send
-   yourself 5 BTC and only the required amount (0.0014 BTC in the case pictured
-   above) will be spent to create the bond in the next step, with an equivalent
-   amount plus fees in reserves. The remainder goes to your available balance,
-   which can then be traded, sent, or simply held in the wallet.
-
-   You may disable future bonds at any time by changing the "Target Tier" to 0
-   in the "Update Bond Options" form accessible from DEX host settings form
-   accessible from the Settings page. This will return any reserves to the
-   available balance. Any active bonds will automatically be refunded when their
-   lock time expires (currently 2 months after creation).
-
-   NOTE: The native Litecoin and Bitcoin Cash wallets connect to full nodes on
-   the blockchain network that have "compact block filters" enabled. It may take
-   time for the wallet to crawl the network until it finds such nodes. Be
-   patient; otherwise you can bootstrap the process using a known seed node such
-   as the Litecoin nodes on [this list](https://gist.github.com/chappjc/d0f26b12258f8531bb78b37f38d080a0).
-
-8. Once the wallet is synchronized and has at least enough to create your
-   time-locked fidelity bond, the form will update, and you should click the
-   button to create and broadcast your bond transaction.
-
-   <img src="images/register-button.png" width="360">
-
-   After proceeding, the available balance will be the amount you deposited
-   in the previous step minus this bond amount and transaction fees.
-
-9. You will then be taken to the **Markets** page, where you must wait for
-   confirmations on your bond transaction:
-
-   <img src="images/wait-for-confs.png" width="360">
-
-   While waiting, you may create additional wallets either directly from the
-   displayed market or on the Wallets page accessible from the navigation bar at
-   the top. This is also a good time to retrieve your application "seed", as
-   described in the next step.
-
-   After the transaction is confirmed, the application will submit the bond for
-   validation and you will be ready to trade:
-
-   <img src="images/bond-accepted.png" width="360">
-
-   It is recommended to export bond information whenever they are created since
-   they are not automatically restored from just the application seed. Do this
-   using the "Export Account" button of the DEX host settings accessible from
-   the Settings page. If you restore from seed in the future: create the same
-   wallets, add the same DEX host, and *then* import the bonds from this backup.
-
-10. At any time you can go to the Settings page via the "gears" icon in the top
-    navigation bar to retrieve the application seed that was generated when
-    initializing the application in the first dialog. This seed is used to
-    restore your DEX accounts and any native wallets, so keep it safe.
+   If you skip this step now (not recommended), you can go to the Settings view
+   via the "gears" icon in the top navigation bar to retrieve your application
+   seed later.
 
     <img src="images/view-seed.png" width="360">
 
-11. That's it! Use the Buy/Sell form on the Markets page to begin placing
-   orders. Go to the Wallets page to obtain addresses for your wallets so that
-   you can send yourself funds to trade.
+6. That's it! You'll be redirected to the wallets page after step 4 above.
+
+7. To start trading, follow the guide to [Setting Up Your DEX Trading
+   Account](https://github.com/decred/dcrdex/wiki/DEX-Trading-Account-Management).
 
 ## Advanced Client Installation
 
 ### Dependencies
 
 1. [Go 1.19 or 1.20](https://golang.org/doc/install)
-2. (optional) [Node 18 or 20](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) is used to bundle resources for the browser interface. It's important to note that the DEX client has no external JavaScript dependencies. The client doesn't import any Node packages. We only use Node to lint and compile our own JavaScript and css resources. This build step is not required if building from a release branch such as `release-v0.6`.
+2. (optional) [Node 18 or 20](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) is used to bundle resources for the browser interface. It's important to note that Bison Wallet has no external JavaScript dependencies. The client doesn't import any Node packages. We only use Node to lint and compile our own JavaScript and css resources. This build step is not required if building from a release branch such as `release-v0.6`.
 3. At least 2 GB of available system memory.
 
 ### Build from Source
@@ -217,18 +143,18 @@ several blocks.
 npm clean-install && npm run build
 ```
 
-**Build and run the client** from *client/cmd/dexc*.
+**Build and run the client** from *client/cmd/bisonw*.
 
 ```sh
 go build
-./dexc
+./bisonw
 ```
 
 Connect to the client from your browser at `localhost:5758`.
 
-While `dexc` may be run from within the git workspace as described above, the
-`dexc` binary executable generated with `go build` can be copied into a
-different folder (e.g. `/opt/dcrdex/dexc`).
+While `bisonw` may be run from within the git workspace as described above, the
+`bisonw` binary executable generated with `go build` can be copied into a
+different folder (e.g. `/opt/dcrdex/bisonw`).
 
 ### Docker
 
@@ -247,5 +173,5 @@ docker volume create --name=dcrdex_data
 #### Run image
 
 ```sh
-docker run -d --rm -p 127.0.0.1:5758:5758 -v dcrdex_data:/root/.dexc user/dcrdex
+docker run -d --rm -p 127.0.0.1:5758:5758 -v dcrdex_data:/root/.bisonw user/dcrdex
 ```
