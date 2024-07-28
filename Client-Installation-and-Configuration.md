@@ -2,24 +2,23 @@
 
 ## Client Quick Start Installation
 
-Bison Wallet can be installed in one of the following ways. Download the
-application from *just one* of the following locations:
+Bison Wallet can be installed in one of the following ways:
 
-* Download standalone Bison Wallet for your operating system for the [latest
-  release on GitHub](https://github.com/decred/dcrdex/releases). Extract the
-  "bw" executable from the archive and run it. Open any web browser to the
-  link shown by the application. You may also put the **bisonw** executable's
-  folder on your `PATH`.
-* [Use Decrediton](https://docs.decred.org/wallets/decrediton/decrediton-setup/),
-  the official graphical Decred wallet, which integrates Bison Wallet, and go
-  to the DEX tab.
-* (Legacy users) Use the Decred command line application installer,
-  [**dcrinstall**](https://docs.decred.org/wallets/cli/cli-installation/). This
-  is no longer recommended.
-* Build the standalone client [from source](https://github.com/decred/dcrdex/wiki/Client-Installation-and-Configuration#advanced-client-installation).
-
-**WARNING**: If you decide to build from source, use the latest release branch,
-not `master`.
+* [Download the latest release from GitHub](https://github.com/decred/dcrdex/releases):
+    * Download the standalone Bison Wallet app for your operating system from
+    Github.  Extract the "bw" executable from the archive and run it.  Open any
+    web browser to the link shown by the application.  You may also put the
+    **bisonw** executable's folder on your `PATH`.
+* [Use Decrediton](https://docs.decred.org/wallets/decrediton/decrediton-setup/):
+    * Decrediton is the official graphical Decred wallet, and it integrates
+    Bison Wallet.  While running Decrediton, access Bison Wallet from the DEX
+    tab.
+* [Build Bison Wallet from source](#advanced-client-installation):
+    * This method is relatively simple for users who are familiar with entering
+    commands from the terminal and cloning git repositories.  Instructions are
+    provided via the link above.
+    * **WARNING**: If you decide to build from source, use the latest release
+    branch, not `master`.
 
 ### Important Note on External Wallets
 
@@ -37,11 +36,17 @@ These instructions assume you've obtained Bison Wallet as described in the
 
 ### Prerequisites
 
-If you use the standalone Bison Wallet, you will need a web browser to open
-Bison Wallett user interface as described in the next section.
+If you use the standalone Bison Wallet, you will need a web browser to open the
+Bison Wallet user interface as described in the next section.
 
-Most users will use the native wallets that are already built into the DEX
-client. Depending on the asset, you may be able to choose from: (1) a native
+Most users will want to use the native wallets that are already built into the
+DEX client.  Native wallets come mostly ready-to-go.  For account-based wallets
+like Ethereum and Polygon, no syncing is necessary.  For utxo-based coins like
+Bitcoin, Decred, and others, they must be synced.  However, SPV wallets are
+provided to greatly reduce the sync time (meaning the full blockchains are not
+required to be downloaded).
+
+Depending on the asset, you may be able to choose from: (1) a native
 wallet, (2) an external full node wallet, or (3) an Electrum-based wallet.
 Consult the following table for a summary of wallet support. If there is a
 checkmark in the "native" column, no external software is required.
